@@ -39,6 +39,8 @@ class ToggleScreenState extends State<ToggleScreen> {
     await _databaseReference.child('led').set(isLedOn);
   }
 
+
+
   /// Toggle fan state and update in Firebase
   void toggleFan() async {
     setState(() {

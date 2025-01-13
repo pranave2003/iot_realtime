@@ -41,14 +41,15 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA3R3FuCMvBIKY8mFA8S_hJXSbfrc-FEgI',
-    appId: '1:323336171190:web:2103019509b244df61c017',
-    messagingSenderId: '323336171190',
-    projectId: 'demo1-282df',
-    authDomain: 'demo1-282df.firebaseapp.com',
-    storageBucket: 'demo1-282df.firebasestorage.app',
-    measurementId: 'G-NE14LCQRS2',
-  );
+      apiKey: 'AIzaSyA3R3FuCMvBIKY8mFA8S_hJXSbfrc-FEgI',
+      appId: '1:323336171190:web:2103019509b244df61c017',
+      messagingSenderId: '323336171190',
+      projectId: 'demo1-282df',
+      authDomain: 'demo1-282df.firebaseapp.com',
+      storageBucket: 'demo1-282df.firebasestorage.app',
+      measurementId: 'G-NE14LCQRS2',
+      databaseURL:
+          'https://demo1-282df-default-rtdb.asia-southeast1.firebasedatabase.app/');
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBameue9KKh7BO7TkOK_jsksUKEH-lff_U',

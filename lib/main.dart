@@ -2,19 +2,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ios/onoff.dart';
 
-void main() async {
+import 'controll_light_speed.dart';
+import 'firebase_options.dart';
+
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: FirebaseOptions(
-      apiKey: 'k4UXcn8ovpQApivPD4LpoepPawL3vrXBGPzAMpL7',
-      appId: '1:323336171190:web:2103019509b244df61c017',
-      messagingSenderId: '323336171190',
-      projectId: 'demo1-282df',
-      databaseURL:
-          'https://demo1-282df-default-rtdb.asia-southeast1.firebasedatabase.app/', // Add this
-    ),
+    options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
