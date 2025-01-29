@@ -17,28 +17,25 @@ Future<void> main() async {
   OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
   OneSignal.initialize("fe4c7795-1d79-4d6e-b288-61ffc04b2a98");
   OneSignal.Notifications.requestPermission(true);
- initOneSignal();
+ await initOneSignal();
   runApp(const MyApp());
 }
 
 Future<void> initOneSignal() async {
-  OneSignal.Debug.setLogLevel(
-    kDebugMode ? OSLogLevel.verbose : OSLogLevel.none,
-  );
 
-  OneSignal.initialize("appId");
+
+  // Wait a moment before getting Player ID
+  await Future.delayed(Duration(seconds: 2));
 
   final id = OneSignal.User.pushSubscription.id;
 
   if (id != null) {
-   print('///////////////////////////////////////////////////////////$id');
+    print('✅ OneSignal Player ID: $id');
+  } else {
+    print("❌ Player ID is null. The user may not be subscribed yet.");
   }
-  else{
-    print("///////////////////////nothing/////////////");
-  }
-
-  await OneSignal.Notifications.requestPermission(true);
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
