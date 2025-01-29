@@ -25,12 +25,39 @@ class _SendScreenState extends State<SendScreen> {
             decoration: const InputDecoration(hintText: "Description"),
             controller: description,
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+                onPressed: () async {
+                  await NotificationService()
+                      .Sendnotification(title.text, description.text);
+                },
+                child: const Text("Send to all Notification")),
+          ),
+          SizedBox(
+            height: 100,
+          ),
           ElevatedButton(
               onPressed: () async {
-                await NotificationService()
-                    .Sendnotification(title.text, description.text);
+                await NotificationService().Sendnotificationtoemulator();
               },
-              child: const Text("Send Notification"))
+              child: const Text("Send One emulator")),
+          SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
+              onPressed: () async {
+                await NotificationService().Sendnotificationtopoco();
+              },
+              child: const Text("Send One poco")),
+          SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
+              onPressed: () async {
+                await NotificationService().Sendnotificationtomygroup();
+              },
+              child: const Text("Send To group"))
         ],
       ),
     );
