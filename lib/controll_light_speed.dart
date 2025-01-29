@@ -2,6 +2,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class Light_Fan extends StatefulWidget {
+  const Light_Fan({super.key});
+
   @override
   Light_FanState createState() => Light_FanState();
 }
@@ -62,7 +64,7 @@ class Light_FanState extends State<Light_Fan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Control LED and Fan'),
+        title: const Text('Control LED and Fan'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -72,7 +74,7 @@ class Light_FanState extends State<Light_Fan> {
             // LED Brightness
             Text(
               'LED Brightness: ${ledBrightness.toInt()}%',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             Slider(
               value: ledBrightness,
@@ -84,12 +86,12 @@ class Light_FanState extends State<Light_Fan> {
                 updateLedBrightness(value);
               },
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             // Fan Speed
             Text(
               'Fan Speed: ${fanSpeed.toInt()}%',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             Slider(
               value: fanSpeed,

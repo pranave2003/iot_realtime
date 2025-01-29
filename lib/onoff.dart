@@ -2,6 +2,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class ToggleScreen extends StatefulWidget {
+  const ToggleScreen({super.key});
+
   @override
   ToggleScreenState createState() => ToggleScreenState();
 }
@@ -55,7 +57,7 @@ class ToggleScreenState extends State<ToggleScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Firebase Toggle Button'),
+        title: const Text('Firebase Toggle Button'),
       ),
       body: Center(
         child: Column(
@@ -64,37 +66,37 @@ class ToggleScreenState extends State<ToggleScreen> {
             // LED Status
             Text(
               'LED is ${isLedOn ? "ON" : "OFF"}',
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: toggleLed,
               style: ElevatedButton.styleFrom(
                 backgroundColor: isLedOn ? Colors.green : Colors.red,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
               ),
               child: Text(
                 isLedOn ? 'Turn OFF LED' : 'Turn ON LED',
-                style: TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 18),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Fan Status
             Text(
               'Fan is ${isFanOn ? "ON" : "OFF"}',
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: toggleFan,
               style: ElevatedButton.styleFrom(
                 backgroundColor: isFanOn ? Colors.green : Colors.yellow,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
               ),
               child: Text(
                 isFanOn ? 'Turn OFF Fan' : 'Turn ON Fan',
-                style: TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 18),
               ),
             ),
           ],
